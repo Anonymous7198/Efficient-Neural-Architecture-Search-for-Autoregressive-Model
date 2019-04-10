@@ -14,7 +14,7 @@ hidden[x_id], hidden[y_id], ops[x_op], ops[y_op], act[x_act], act[y_act], comb[c
 ```
 Search space (note that all conv + self attention ops are causal and can be implemented with shifting and padding)
 ```
-hidden are taken from two previous cells outputs
+hidden are taken from two previous cells outputs + previous block outputs
 
 ops are taken from:
   3x3 causal conv                       3x3 causal group conv

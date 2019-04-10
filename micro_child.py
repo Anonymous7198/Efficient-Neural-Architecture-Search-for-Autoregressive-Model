@@ -253,7 +253,7 @@ class MicroChild(object):
           y = prev_layers[y_id, :, :, :, :]
           y = self._enas_cell(y, y_op, y_act, out_filters)
 
-          if (y_op in [0, 1, 2, 3, 4, 5, 6, 7] and self.drop_path_keep_prob is not None):
+          if (y_op in [0, 1, 2, 3, 4, 5, 6, 7] and self.drop_path_keep_prob is not None and is_training==True):
             y = self._apply_drop_path(y, layer_id)
 
           y_used = tf.one_hot(y_id, depth=self.num_cells + 2, dtype=tf.int32)
